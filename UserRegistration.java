@@ -32,11 +32,19 @@ public class UserRegistration {
         System.out.println("The Mob No. is "+mobNo);
     }
 
+    public void passwordValidation() {
+        System.out.println("Enter Password");
+        String password = sc.nextLine();
+        boolean passWord = Pattern.compile("^[A-Za-z0-9]{8,}").matcher(password).matches();
+        System.out.println("The password is "+passWord);
+    }
+
     public static void main(String args[]){
         UserRegistration user = new UserRegistration();
         user.firstNameValidation();
         user.lastNameValidation();
         user.emailValidation();
         user.mobNoValidation();
+        user.passwordValidation();
     }
 }
