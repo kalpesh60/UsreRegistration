@@ -10,8 +10,17 @@ public class UserRegistration {
         boolean firstName = Pattern.compile("^[A-Z]{1}[a-zA-Z]{3,}").matcher(name).matches();
         System.out.println("The name is "+firstName);
     }
+
+    public void lastNameValidation() {
+        System.out.println("Enter Last Name");
+        String name = sc.nextLine();
+        boolean lastName = Pattern.compile("^[A-Z]{1}[a-zA-Z]{3,}").matcher(name).matches();
+        System.out.println("The name is "+lastName);
+    }
+
     public static void main(String args[]){
         UserRegistration user = new UserRegistration();
         user.firstNameValidation();
+        user.lastNameValidation();
     }
 }
