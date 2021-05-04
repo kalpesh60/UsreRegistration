@@ -21,8 +21,15 @@ public class UserRegistration {
     public void emailValidation() {
         System.out.println("Enter Email Id");
         String mail = sc.nextLine();
-        boolean email = Pattern.compile("^[A-Za-z0-9]{1,}[-+_.]{0,1}[A-Za-z0-9]{0,}[@]{1}[A-Za-z0-9]{1,}[.]{1}[A-Za-z]{2,3}[.]{0,1}[A-Za-z]{0,3}").matcher(mail).matches();
+        boolean email = Pattern.compile("(^[A-Za-z0-9]{1,}[-+_.]{0,1})[A-Za-z0-9]{0,}[@]{1}[A-Za-z0-9]{1,}[.]{1}[A-Za-z]{2,3}[.]{0,1}[A-Za-z]{0,3}").matcher(mail).matches();
         System.out.println("The Email is "+email);
+    }
+
+    public void mobNoValidation() {
+        System.out.println("Enter Mob No.");
+        String mob_no = sc.nextLine();
+        boolean mobNo = Pattern.compile("^[0-9]{2}\\s{1}[0-9]{10}$").matcher(mob_no).matches();
+        System.out.println("The Mob No. is "+mobNo);
     }
 
     public static void main(String args[]){
@@ -30,5 +37,6 @@ public class UserRegistration {
         user.firstNameValidation();
         user.lastNameValidation();
         user.emailValidation();
+        user.mobNoValidation();
     }
 }
