@@ -35,7 +35,7 @@ public class UserRegistration {
     public void passwordValidation() {
         System.out.println("Enter Password");
         String password = sc.nextLine();
-        boolean passWord = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z0-9]){8,}.*").matcher(password).matches();
+        boolean passWord = Pattern.compile("^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]){8,}.*").matcher(password).matches();
         System.out.println("The password is "+passWord);
     }
 
